@@ -1,4 +1,4 @@
-package com.sanathcoding.noteapplication
+package com.sanathcoding.noteapplication.feature_note.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
