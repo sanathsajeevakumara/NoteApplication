@@ -10,4 +10,7 @@
     <string name="your_note">Your Note</string>
     <string name="add_note_desc">Add Note</string>
     <string name="sort_note">Sort Note</string>
+    <string name="title_hint">Enter title…</string>
+    <string name="content_hint">Enter some content…</string>
+    <string name="can_not_save_note">Couldn\'t save note</string>
 </resources>
