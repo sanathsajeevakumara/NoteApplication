@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Note Application</string>
+    <string name="note_title_empty_error">The title of the note can\'t be blank</string>
+    <string name="note_content_empty_error">The content of the note can\'t be blank</string>
 </resources>
