@@ -1,0 +1,20 @@
+name: Note App CI
+
+on:
+  pull_request:
+    branches: [master]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+      - name: Setup Java JDK 1.8
+        uses: actions/setup java@v1
+        with:
+          distribution: 'temurin'
+          java-version: 1.8
+          cache: 'gradle'
+      - name: Build With Gradle
+        run: ./gradlew build
