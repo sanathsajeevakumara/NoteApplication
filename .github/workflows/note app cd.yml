@@ -1,4 +1,4 @@
-name: Android Weather Application CD
+name: Note Application CD
 
 on:
   push:
