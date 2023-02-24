@@ -2,4 +2,12 @@
     <string name="app_name">Note Application</string>
     <string name="note_title_empty_error">The title of the note can\'t be blank</string>
     <string name="note_content_empty_error">The content of the note can\'t be blank</string>
+    <string name="orderby_title">Title</string>
+    <string name="orderby_date">Date</string>
+    <string name="orderby_color">Color</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="your_note">Your Note</string>
+    <string name="add_note_desc">Add Note</string>
+    <string name="sort_note">Sort Note</string>
 </resources>
