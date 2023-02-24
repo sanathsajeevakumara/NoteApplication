@@ -6,10 +6,7 @@ import com.sanathcoding.noteapplication.core.common.NoteConst.Companion.NOTE_DB_
 import com.sanathcoding.noteapplication.feature_note.data.data_source.NoteDao
 import com.sanathcoding.noteapplication.feature_note.data.data_source.NoteDatabase
 import com.sanathcoding.noteapplication.feature_note.domain.repository.NoteRepository
-import com.sanathcoding.noteapplication.feature_note.domain.use_case.AddNote
-import com.sanathcoding.noteapplication.feature_note.domain.use_case.DeleteNote
-import com.sanathcoding.noteapplication.feature_note.domain.use_case.GetNotes
-import com.sanathcoding.noteapplication.feature_note.domain.use_case.NoteUseCases
+import com.sanathcoding.noteapplication.feature_note.domain.use_case.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,7 +39,8 @@ object NoteAppModule {
         return NoteUseCases(
             getNotes = GetNotes(repository),
             deleteNote = DeleteNote(repository),
-            addNote = AddNote(repository, app)
+            addNote = AddNote(repository, app),
+            getNote = GetNote(repository)
         )
     }
 
