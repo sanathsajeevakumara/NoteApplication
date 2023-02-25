@@ -20,6 +20,7 @@ import androidx.navigation.NavController
 import com.sanathcoding.noteapplication.R
 import com.sanathcoding.noteapplication.feature_note.presentation.notes.component.NoteItem
 import com.sanathcoding.noteapplication.feature_note.presentation.notes.component.OrderSection
+import com.sanathcoding.noteapplication.feature_note.presentation.navigation.Screen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -36,7 +37,9 @@ fun NotesScreen(
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    navController.navigate(Screen.AddEditNoteScreen.route)
+                },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
                 Icon(
@@ -98,7 +101,10 @@ fun NotesScreen(
                         note = note,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable {},
+                            .clickable {
+                                navController.navigate(Screen.AddEditNoteScreen.route +
+                                        "?noteId=${note.id}&noteColor=${note.color}")
+                            },
                         onDeleteClick = {
                             notesViewModel.onEvent(
                                 NotesEvent.DeleteNote(note)

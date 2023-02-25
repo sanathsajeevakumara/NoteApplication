@@ -49,7 +49,7 @@ class AddEditNoteViewModel @Inject constructor(
     init {
         savedStateHandle.get<Int>("noteId")?.let { noteId ->
             if (noteId != -1) {
-                viewModelScope.launch(Dispatchers.IO) {
+                viewModelScope.launch {
                     noteUseCases.getNote(noteId)?.also {note ->
                         currentId = note.id
                         noteTitle = noteTitle.copy(
