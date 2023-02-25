@@ -2,7 +2,7 @@ name: Run Unit Test
 
 on:
   pull_request:
-    branches: [master, development]
+    branches: [development]
   
 jobs:
   test:
