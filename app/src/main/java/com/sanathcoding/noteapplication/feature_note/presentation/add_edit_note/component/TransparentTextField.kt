@@ -26,7 +26,7 @@ fun TransparentTextField(
         BasicTextField(
             value = text,
             onValueChange = onValueChange,
-//            isSingleLine = isSingleLine,
+            singleLine = isSingleLine,
             textStyle = textStyle,
             modifier = Modifier
                 .fillMaxWidth()
