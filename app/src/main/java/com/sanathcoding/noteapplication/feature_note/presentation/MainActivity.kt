@@ -7,7 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.sanathcoding.noteapplication.feature_note.presentation.notes.NotesScreen
+import androidx.navigation.compose.rememberNavController
+import com.sanathcoding.noteapplication.feature_note.presentation.navigation.Navigation
 import com.sanathcoding.noteapplication.ui.theme.NoteApplicationTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +22,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    val navController = rememberNavController()
+                    Navigation(navController)
                 }
             }
         }
