@@ -20,4 +20,4 @@ jobs:
             java-version: 17
 
       - name: Note App Unit test
-          run: bash ./gradlew test
+        run: bash ./gradlew test
