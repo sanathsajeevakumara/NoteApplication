@@ -14,7 +14,6 @@ import com.sanathcoding.noteapplication.feature_note.domain.model.Note
 import com.sanathcoding.noteapplication.feature_note.domain.use_case.NoteUseCases
 import com.sanathcoding.noteapplication.feature_note.presentation.add_edit_note.component.NoteTextFieldState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
