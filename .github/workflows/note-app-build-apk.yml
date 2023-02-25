@@ -1,8 +1,8 @@
-name: Note Application CD
+name: Build Note Application.apk
 
 on:
   push:
-    branches: [master, Dev]
+    branches: [master]
     
 jobs:
   build:
