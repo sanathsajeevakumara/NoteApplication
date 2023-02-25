@@ -18,8 +18,14 @@ jobs:
           restore-key: |
             $[{ runner.os }]-gradle-
 
-      - name: Assemble Debug
-        uses: ./gradlew assembleDebug
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.10.0
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Build With Gradle
+        run: ./gradlew build --no-daemon
 
       - name: Upload Build APK
         uses: actions/upload-artifact@v3.1.2
