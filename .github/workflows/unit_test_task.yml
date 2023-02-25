@@ -18,8 +18,8 @@ jobs:
           restore-key: |
             $[{ runner.os }]-gradle-
         
-      - name: Run Debug Test
-        uses: ./gradlew testDebugUnitTest
+      - name: Unit Test
+        run: ./gradlew testDebugUnitTest
         
       - name: Upload Test Reports
         if: ${{ always() }}
