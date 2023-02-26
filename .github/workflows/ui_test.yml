@@ -1,0 +1,31 @@
+name: UI Test
+on: [pull_request]
+jobs:
+  test_job:
+    name: UI Test
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        
+      - name: Restore Cache
+        uses: actions/cache@v3.2.6
+        with: 
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: $[{ runner.os }]-gradle-$[{ hashFile('**/*.gradle*') }]
+          restore-key: |
+            $[{ runner.os }]-gradle-
+        
+      - name: UI Test
+        uses: ReactiveCircus/android-emulator-runner@v2.27.0
+        with:
+          api-level: 29
+          target: default
+          arch: x86
+          profile: Nexus 6
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: true
+          emulator-build: 7425822
+          script: echo "Generated AVD."
