@@ -1,0 +1,28 @@
+name: UI Test
+on: [pull_request]
+jobs:
+  test_job:
+    name: UI Test
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        
+      - name: Restore Cache
+        uses: actions/cache@v3.2.6
+        with: 
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: $[{ runner.os }]-gradle-$[{ hashFile('**/*.gradle*') }]
+          restore-key: |
+            $[{ runner.os }]-gradle-
+        
+      - name: Unit Test
+        uses: ReactiveCircus/android-emulator-runner@v2.27.0
+        with:
+          api-level: 29
+          target: default
+          arch: x86
+          profile: Nexus 6
+          script: ./gradlew connectedCheck --stacktrace
