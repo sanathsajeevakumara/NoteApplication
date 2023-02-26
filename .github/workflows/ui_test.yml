@@ -18,7 +18,7 @@ jobs:
           restore-key: |
             $[{ runner.os }]-gradle-
         
-      - name: Unit Test
+      - name: UI Test
         uses: ReactiveCircus/android-emulator-runner@v2.27.0
         with:
           api-level: 29
@@ -27,5 +27,5 @@ jobs:
           profile: Nexus 6
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          emulator-build: 6110076
+          emulator-build: 7425822
           script: ./gradlew connectedCheck --stacktrace
