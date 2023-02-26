@@ -2,7 +2,6 @@ package com.sanathcoding.noteapplication.feature_note.di
 
 import android.app.Application
 import androidx.room.Room
-import com.sanathcoding.noteapplication.core.common.NoteValue.NOTE_DB_NAME
 import com.sanathcoding.noteapplication.feature_note.data.data_source.NoteDao
 import com.sanathcoding.noteapplication.feature_note.data.data_source.NoteDatabase
 import com.sanathcoding.noteapplication.feature_note.domain.repository.NoteRepository
@@ -15,15 +14,14 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NoteAppModule {
+object TestNoteAppModule {
 
     @Provides
     @Singleton
     fun provideNoteDatabase(app: Application): NoteDatabase {
-        return Room.databaseBuilder(
+        return Room.inMemoryDatabaseBuilder(
             app,
             NoteDatabase::class.java,
-            NOTE_DB_NAME
         ).build()
     }
 

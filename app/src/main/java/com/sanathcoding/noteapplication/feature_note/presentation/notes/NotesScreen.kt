@@ -13,11 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.sanathcoding.noteapplication.R
+import com.sanathcoding.noteapplication.core.util.TestTag.ORDER_SECTION
 import com.sanathcoding.noteapplication.feature_note.presentation.notes.component.NoteItem
 import com.sanathcoding.noteapplication.feature_note.presentation.notes.component.OrderSection
 import com.sanathcoding.noteapplication.feature_note.presentation.navigation.Screen
@@ -89,6 +91,7 @@ fun NotesScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 16.dp)
+                        .testTag(ORDER_SECTION)
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
