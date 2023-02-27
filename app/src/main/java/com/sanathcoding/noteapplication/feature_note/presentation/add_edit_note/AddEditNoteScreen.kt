@@ -13,11 +13,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.sanathcoding.noteapplication.R
+import com.sanathcoding.noteapplication.core.util.TestTag.CONTENT_TEXT_FIELD
+import com.sanathcoding.noteapplication.core.util.TestTag.TITLE_TEXT_FIELD
 import com.sanathcoding.noteapplication.feature_note.domain.model.Note
 import com.sanathcoding.noteapplication.feature_note.presentation.add_edit_note.component.CircleColorSelector
 import com.sanathcoding.noteapplication.feature_note.presentation.add_edit_note.component.TransparentTextField
@@ -112,7 +115,9 @@ fun AddEditNoteScreen(
                 isHintVisible = titleState.isHintVisible,
                 isSingleLine = true,
                 textStyle = MaterialTheme.typography.h5,
-                modifier = Modifier.padding(16.dp)
+                modifier = Modifier
+                    .padding(16.dp),
+                testTag = TITLE_TEXT_FIELD
             )
             Spacer(modifier = Modifier.height(16.dp))
             TransparentTextField(
@@ -128,7 +133,8 @@ fun AddEditNoteScreen(
                 textStyle = MaterialTheme.typography.body1,
                 modifier = Modifier
                     .fillMaxHeight()
-                    .padding(16.dp)
+                    .padding(16.dp),
+                testTag = CONTENT_TEXT_FIELD
             )
         }
     }
