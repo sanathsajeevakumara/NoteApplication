@@ -20,8 +20,10 @@ import androidx.compose.ui.unit.dp
 import com.sanathcoding.noteapplication.feature_note.domain.model.Note
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.core.graphics.ColorUtils
+import com.sanathcoding.noteapplication.core.util.TestTag.NOTE_ITEM
 
 @Composable
 fun NoteItem(
@@ -31,7 +33,7 @@ fun NoteItem(
     cutCornerSize: Dp = 30.dp,
     onDeleteClick: () -> Unit
 ) {
-    Box(modifier = modifier) {
+    Box(modifier = modifier.testTag(NOTE_ITEM)) {
         Canvas(modifier = Modifier.matchParentSize()) {
             val clipPath = Path().apply {
                 lineTo(size.width - cutCornerSize.toPx(), 0f)
